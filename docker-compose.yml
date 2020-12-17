@@ -1,0 +1,40 @@
+version: "3"
+services:
+    ipsec:
+        build: .
+        image: jimlin7777/strongswan-ipsec
+        working_dir: "/root"
+        command: bash
+        cap_add:
+            - NET_ADMIN
+        stdin_open: true
+        tty: true
+        volumes:
+            - "./scripts:/root/scripts"
+            - "./ipsec.conf:/etc/ipsec.conf:ro"
+            - "./ipsec.secrets:/etc/ipsec.secrets:ro"
+            - "./pki/:/root/pki" # persistent PKI folder
+        ports:
+            - "500:500/udp"
+            - "4500:4500/udp"
+        networks:
+            subnet:
+                ipv4_address: 10.15.20.2
+
+    hello_world:
+        image: golang:1.15.6-buster
+        working_dir: /hello_world
+        command: sh -c "go run main.go"
+        volumes:
+          - "./hello_world:/hello_world/"
+        restart: always
+        networks:
+            subnet:
+                ipv4_address: 10.15.20.25
+
+networks:
+    subnet:
+        ipam:
+            driver: default
+            config:
+                - subnet: 10.15.20.0/24
