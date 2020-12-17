@@ -114,3 +114,9 @@ Matches the destination end-point address of a tunnel mode SA. Only valid with -
 --next
 Start the next element in the policy specification. Can only be used with --strict.
 ```
+* <https://wiki.strongswan.org/issues/2648>: `uniqueids=never`
+```
+Now my question is, does uniqueids=never means multiple clients can connect using SAME username and password? is that correct ?
+
+Yes.
+```
