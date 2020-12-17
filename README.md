@@ -120,3 +120,4 @@ Now my question is, does uniqueids=never means multiple clients can connect usin
 
 Yes.
 ```
+* <https://wiki.strongswan.org/projects/strongswan/wiki/ForwardingAndSplitTunneling>: I think Digital Ocean mainly copied code from it.
