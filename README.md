@@ -121,3 +121,5 @@ Now my question is, does uniqueids=never means multiple clients can connect usin
 Yes.
 ```
 * <https://wiki.strongswan.org/projects/strongswan/wiki/ForwardingAndSplitTunneling>: I think Digital Ocean mainly copied code from it.
+* [Ping not working between Hosts](https://wiki.strongswan.org/issues/1149): By my test, I find setting `leftsubnet=10.15.20.0/24, 10.10.10.0/24` will enable the VPN server ability to ping `10.10.10.1` and VPN clients will also have the ability to ping each other.
+* [Number of simultaneous connections limited to 5 only](https://wiki.strongswan.org/issues/801): create a pool of 6 virtual IP addresses so that no more than 6 hosts can connect.
