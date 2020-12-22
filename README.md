@@ -125,3 +125,20 @@ Yes.
 * <https://wiki.strongswan.org/projects/strongswan/wiki/ForwardingAndSplitTunneling>: I think Digital Ocean mainly copied code from it.
 * [Ping not working between Hosts](https://wiki.strongswan.org/issues/1149): By my test, I find setting `leftsubnet=10.15.20.0/24, 10.10.10.0/24` will enable the VPN server ability to ping `10.10.10.1` and VPN clients will also have the ability to ping each other.
 * [Number of simultaneous connections limited to 5 only](https://wiki.strongswan.org/issues/801): create a pool of 6 virtual IP addresses so that no more than 6 hosts can connect.
+* [strongSwan identity parsing](https://wiki.strongswan.org/projects/strongswan/wiki/IdentityParsing)
+* [Migration from ipsec.conf to swanctl.conf](https://wiki.strongswan.org/projects/strongswan/wiki/Fromipsecconf)
+* [strongSwan setup for Road Warriors on macOS 10.12, iOS 10 and Windows 10](https://gist.github.com/karlvr/34f46e1723a2118bb16190c22dbed1cc)
+    * `Local ID: the user id, and name on your user certificate, probably the email address`
+* [IKEv2 MDM settings for Apple devices](https://support.apple.com/en-ca/guide/mdm/mdm4ce9487d/web):
+* <https://developer.apple.com/forums/thread/61122>
+* <https://www.cisco.com/en/US/docs/ios-xml/ios/sec_conn_ikevpn/configuration/15-1mt/Configuring_Internet_Key_Exchange_Version_2.html#GUID-E33A61BF-7D79-4F69-9A71-257D6D643E4B>
+    ```
+    IKEv2 Policy
+An IKEv2 policy contains proposals that are used to negotiate the encryption, integrity, PRF algorithms, and DH group in SA_INIT exchange. It can have match statements which are used as selection criteria to select a policy during negotiation.
+    ```
+* <https://resources.intenseschool.com/configuring-ikev2-on-cisco-ios-1-understanding-ikev2/>:
+    ```
+    IKEv2 Policy
+
+This is a new concept on the Cisco IOS with IKEv2 that was not available in IKEv1. In IKEv1, all the IKEv1 policies configured on a device are used for negotiation. With IKEv2 policies, you can specify which IKEv2 proposals should be used for negotiation based on different match statements. Currently, you can only match the local address and front door VRF (FVRF).
+    ```
