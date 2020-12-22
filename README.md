@@ -82,6 +82,7 @@ no known IPsec stack detected, ignoring!
 
 ## Notes in ipsec.conf
 * `leftsubnet=0.0.0.0/0`: it means to let the client to route everything through the VPN server.
+* `openssl rand -base64 64`: can help you generate strong a preshared key (PSK).
 
 ## References
 * <https://sysadmins.co.za/setup-a-site-to-site-ipsec-vpn-with-strongswan-on-ubuntu/>: where I copied the code.

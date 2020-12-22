@@ -18,6 +18,11 @@ services:
             - "./asymmetric_authentication/ipsec.conf:/etc/ipsec.conf:ro"
             - "./asymmetric_authentication/ipsec.secrets:/etc/ipsec.secrets:ro"
             - "./pki/:/root/pki" # persistent PKI folder
+        # symmetric_authentication/
+        # volumes:
+        #     - "./scripts:/root/scripts"
+        #     - "./symmetric_authentication/ipsec.conf:/etc/ipsec.conf:ro"
+        #     - "./symmetric_authentication/ipsec.secrets:/etc/ipsec.secrets:ro"
         ports:
             - "500:500/udp"
             - "4500:4500/udp"
