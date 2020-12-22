@@ -9,10 +9,14 @@ services:
             - NET_ADMIN
         stdin_open: true
         tty: true
+
+        # asymmetric_authentication/
+        # NOTE: Some IKEv2 implementations might not support this setting!
+        # https://wiki.strongswan.org/projects/strongswan/wiki/IntroductiontostrongSwan#Authentication-Basics
         volumes:
             - "./scripts:/root/scripts"
-            - "./ipsec.conf:/etc/ipsec.conf:ro"
-            - "./ipsec.secrets:/etc/ipsec.secrets:ro"
+            - "./asymmetric_authentication/ipsec.conf:/etc/ipsec.conf:ro"
+            - "./asymmetric_authentication/ipsec.secrets:/etc/ipsec.secrets:ro"
             - "./pki/:/root/pki" # persistent PKI folder
         ports:
             - "500:500/udp"

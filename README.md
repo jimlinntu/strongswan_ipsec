@@ -78,6 +78,7 @@ no known IPsec stack detected, ignoring!
 ## Troubleshooting
 * `ipsec status`
 * `ipsec start`
+* `ipsec --nofork`: This command can let `strongSwan` run in the foreground with log messages.
 
 ## Notes in ipsec.conf
 * `leftsubnet=0.0.0.0/0`: it means to let the client to route everything through the VPN server.
