@@ -140,5 +140,13 @@ An IKEv2 policy contains proposals that are used to negotiate the encryption, in
     ```
     IKEv2 Policy
 
-This is a new concept on the Cisco IOS with IKEv2 that was not available in IKEv1. In IKEv1, all the IKEv1 policies configured on a device are used for negotiation. With IKEv2 policies, you can specify which IKEv2 proposals should be used for negotiation based on different match statements. Currently, you can only match the local address and front door VRF (FVRF).
+    This is a new concept on the Cisco IOS with IKEv2 that was not available in IKEv1. In IKEv1, all the IKEv1 policies configured on a device are used for negotiation. With IKEv2 policies, you can specify which IKEv2 proposals should be used for negotiation based on different match statements. Currently, you can only match the local address and front door VRF (FVRF).
     ```
+* <http://www.unixwiz.net/techtips/iguide-ipsec.html>: A good illustrated guide for IPSec.
+* <https://www.omnisecu.com/tcpip/ikev2-phase-1-and-phase-2-message-exchanges.php>:
+* <https://oeis.org/>
+* [More Modular Exponential (MODP) Diffie-Hellman groups for Internet Key Exchange (IKE)](https://www.ietf.org/rfc/rfc3526.txt)
+* <https://github.com/strongswan/strongswan/blob/428c0b293d57faf9cb5173965bfccc5e3d4e8394/src/libstrongswan/crypto/diffie_hellman.h#L32-L78>: Diffie-Hellman Groups.
+* <https://www.watchguard.com/help/docs/help-center/en-US/Content/en-US/Fireware/mvpn/general/ipsec_vpn_negotiations_c.html>: Phase 1 and 2
+* <https://docs.paloaltonetworks.com/pan-os/8-1/pan-os-admin/vpns/site-to-site-vpn-concepts/internet-key-exchange-ike-for-vpn/ike-phase-2.html>: IKE Phase 2
+* [Internet Key Exchange (IKEv2) Protocol](https://tools.ietf.org/html/rfc4306)
