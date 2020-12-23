@@ -150,3 +150,4 @@ An IKEv2 policy contains proposals that are used to negotiate the encryption, in
 * <https://www.watchguard.com/help/docs/help-center/en-US/Content/en-US/Fireware/mvpn/general/ipsec_vpn_negotiations_c.html>: Phase 1 and 2
 * <https://docs.paloaltonetworks.com/pan-os/8-1/pan-os-admin/vpns/site-to-site-vpn-concepts/internet-key-exchange-ike-for-vpn/ike-phase-2.html>: IKE Phase 2
 * [Internet Key Exchange (IKEv2) Protocol](https://tools.ietf.org/html/rfc4306)
+    * `The SAs for ESP and/or AH that get set up through that IKE_SA we call "CHILD_SAs"`.
