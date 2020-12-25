@@ -44,7 +44,7 @@ bash scripts/create_server_key.sh # generate the server private key and its publ
 ```
 bash scripts/move_certs.sh # copy all credentials into the /etc/ipsec.d/
 ```
-* Add required `iptables` rules: `bash scripts/add_iptables_rules.sh`:
+* (If you use `asymmetric_authentication/` or `symmetric_authentication/`) Add required `iptables` rules: `bash scripts/add_iptables_rules.sh`:
 ```
 $ iptables -t nat -L -v
 Chain POSTROUTING (policy ACCEPT 0 packets, 0 bytes)
@@ -52,6 +52,14 @@ Chain POSTROUTING (policy ACCEPT 0 packets, 0 bytes)
     0     0 DOCKER_POSTROUTING  all  --  any    any     anywhere             127.0.0.11
     0     0 ACCEPT     all  --  any    eth0    10.10.10.0/24        anywhere             policy match dir out pol ipsec
     0     0 MASQUERADE  all  --  any    eth0    10.10.10.0/24        anywhere
+```
+* (If you use `symmetric_authentication_wo_vip/`) Add rules by `bash scripts/add_dest_nat_iptables_rules.sh`:
+```
+$ iptables -t nat -L -v
+Chain POSTROUTING (policy ACCEPT 0 packets, 0 bytes)
+ pkts bytes target     prot opt in     out     source               destination
+    0     0 DOCKER_POSTROUTING  all  --  any    any     anywhere             127.0.0.11
+    0     0 MASQUERADE  all  --  any    eth0    anywhere             strongswan_ipsec_hello_world_1.strongswan_ipsec_subnet
 ```
 * Start strongSwan:
 ```
@@ -151,3 +159,4 @@ An IKEv2 policy contains proposals that are used to negotiate the encryption, in
 * <https://docs.paloaltonetworks.com/pan-os/8-1/pan-os-admin/vpns/site-to-site-vpn-concepts/internet-key-exchange-ike-for-vpn/ike-phase-2.html>: IKE Phase 2
 * [Internet Key Exchange (IKEv2) Protocol](https://tools.ietf.org/html/rfc4306)
     * `The SAs for ESP and/or AH that get set up through that IKE_SA we call "CHILD_SAs"`.
+* <https://wiki.strongswan.org/projects/strongswan/wiki/virtualip>
